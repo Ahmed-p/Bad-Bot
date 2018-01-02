@@ -4,16 +4,9 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log('I am ready!');
 });
-
 client.on('message', message => {
     if (message.content === 'ping') {
     	message.channel.send('PONG!');
-  	}
-});
-
-client.on('message', message => {
-    if (message.content === 'bing') {
-    	message.reply('BONG!');
   	}
 });
 if (message.content === 'help') {
