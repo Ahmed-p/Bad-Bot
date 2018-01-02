@@ -1,14 +1,28 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.on('ready', () => {
-    console.log('I am ready!');
+
+
+
+client.login('توكين'); 
+
+
+
+client.on('ready',  () => {
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
+  console.log('by Ahmed');
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log('is online')
+client.user.setStatus("dnd");
 });
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.channel.send('PONG!');
-  	}
-});
+
+// playing
+client.on('ready', () => {                           
+client.user.setGame(``,'https://www.twitch.tv/Ahmed');                                                                                                                                                                                                                                                                                                                                                                                                                             client.user.setGame(`.help | On 1 Servers`,'https://www.twitch.tv/Ahmed');
+});          
+
 if (message.content === 'help') {
               var embed  = new Discord.RichEmbed()
    
@@ -18,7 +32,7 @@ if (message.content === 'help') {
 .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
-});
+
 
     client.on('message', message => {
      if (message.content === "id") {
