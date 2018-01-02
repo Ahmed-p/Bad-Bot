@@ -1,11 +1,22 @@
-const Discord = require("discord.js");
-  const kboosh = new Discord.Client();
-    const kbooshtoken = "process.env.BOT_TOKEN"
-      kboosh.on('ready', () => {
-        kboosh.user.setGame(`Ahmed TEST Broadcast`,'https://www.twitch.tv/Ahmed TEST Broadcast');
-          console.log('Im Ready!');
-  
-        });
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.channel.send('PONG!');
+  	}
+});
+
+client.on('message', message => {
+    if (message.content === 'bing') {
+    	message.reply('BONG!');
+  	}
+});
+
 
   kboosh.on('message', message => {
     if (message.content.split(' ')[0] == '%k')
@@ -46,3 +57,5 @@ const Discord = require("discord.js");
                           }
 });
 kboosh.login(kbooshtoken);
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
