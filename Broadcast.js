@@ -1,46 +1,14 @@
 const Discord = require("discord.js");
-  const kboosh = new Discord.Client();
-    const kbooshtoken = "MzkyMDAyMDgxNDUzNjM3NjMy.DS1ZJg.ZxbOF2XMlJ8ATWp6Kive6DzqYUY"
-      kboosh.on('ready', () => {
-        kboosh.user.setGame(`Ahmed TEST Broadcast`,'https://www.twitch.tv/Ahmed TEST Broadcast');
-          console.log('Im Ready!');
-  
-        });
+const client = new Discord.Client();
 
-  kboosh.on('message', message => {
-    if (message.content.split(' ')[0] == '%k')
-       message.guild.members.forEach( member => {
-         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-
-
-           member.send( `${member} ! ` + "**" + message.guild.name + " : ** " + message.content.substr(3));
-                                                      message.delete();
-            
-                                                    });
-            
-                                                  });
-   kboosh.on("message", message => {
-       var prefix = "%";
-       if (message.content.startsWith(prefix + "%k")) {
-                          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
-
-                          if (!args[1]) {
-                            
-                                 let embed3 = new Discord.RichEmbed()
-                                     .setDescription(":white_check_mark: | تم ارسال رسالة لا يوجد فيها شيء")
-                                       .setColor("#FF00FF")
-                                          message.channel.sendEmbed(embed3);
-                            
-                                        } else {
-
-                            
-                                           let embed4 = new Discord.RichEmbed()
-                                                            .setDescription(':white_check_mark: | تم ارسال الرساله للجميع ..')
-                                                                .setColor("#99999")
-                               
-                                                                message.channel.sendEmbed(embed4);
-                                                      message.delete();
-                            }
-                          }
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
-kboosh.login(kbooshtoken);
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+
+client.login('MzkyMDAyMDgxNDUzNjM3NjMy.DS1ZJg.ZxbOF2XMlJ8ATWp6Kive6DzqYUY');
