@@ -23,7 +23,7 @@ const Discord = require("discord.js");
        var prefix = "%";
  
              var args = message.content.substring(prefix.length).split(" ");
-                if (message.content.startsWith(prefix + "b")) {
+                if (message.content.startsWith(prefix + "%k")) {
                           if (!message.member.hasPermission("ADMINISTRATOR"))  return;
 
                           if (!args[1]) {
