@@ -16,9 +16,7 @@ client.on('message', message => {
     	message.reply('BONG!');
   	}
 });
-
-
-  kboosh.on('message', message => {
+ kboosh.on('message', message => {
     if (message.content.split(' ')[0] == '%k')
        message.guild.members.forEach( member => {
          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
@@ -56,6 +54,6 @@ client.on('message', message => {
                             }
                           }
 });
-kboosh.login(kbooshtoken);
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
